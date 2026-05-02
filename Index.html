@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+  color: white;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 320px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Centered input wrapper */
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+input {
+  width: 90%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #4a90e2;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #357abd;
+}
+
+.error {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #ff6b6b;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Access Required</h1>
+  <p>By continuing past this page you agree to not share or distribute these videos in any way. You may not credit the videos outside of it. Please enter the provided password to continue.</p>
+
+  <div class="input-container">
+    <input type="password" id="password" placeholder="Password">
+  </div>
+
+  <button onclick="checkPassword()">Continue</button>
+
+  <div class="error" id="error">Wrong password</div>
+</div>
+
+<script>
+function checkPassword() {
+  const pass = document.getElementById("password").value;
+  const correctPassword = "Walnut24@1"; // change this
+
+  if (pass === correctPassword) {
+    window.location.href = "downloads.html";
+  } else {
+    document.getElementById("error").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
